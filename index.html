@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oracle Database Programming</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    min-height:100vh;
+    color:white;
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(
+        -45deg,
+        #2b0000,
+        #5c0000,
+        #8b0000,
+        #b91c1c,
+        #dc2626,
+        #ef4444,
+        #991b1b,
+        #450a0a
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 15s ease infinite;
+
+}
+
+
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+
+/* HERO SECTION */
+
+
+.hero{
+
+    min-height:70vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+
+
+.logo{
+
+    font-size:90px;
+
+    animation:spin 10s linear infinite;
+
+    filter:
+    drop-shadow(0 0 10px white)
+    drop-shadow(0 0 30px red);
+
+}
+
+
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+
+
+h1{
+
+    font-size:55px;
+
+    letter-spacing:3px;
+
+    margin:25px 0;
+
+
+    text-shadow:
+
+    0 0 10px white,
+    0 0 25px #ff6666,
+    0 0 50px red,
+    0 0 90px darkred;
+
+
+    animation:glow 2s infinite alternate;
+
+}
+
+
+
+@keyframes glow{
+
+    from{
+
+        text-shadow:
+
+        0 0 10px white,
+        0 0 20px red;
+
+    }
+
+
+    to{
+
+        text-shadow:
+
+        0 0 20px white,
+        0 0 50px red,
+        0 0 100px crimson;
+
+    }
+
+}
+
+
+
+
+.subtitle{
+
+    font-size:22px;
+
+    color:#fee2e2;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* BUTTON */
+
+
+.button{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:15px 40px;
+
+    background:white;
+
+    color:#991b1b;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.4s;
+
+    box-shadow:
+
+    0 0 20px rgba(255,255,255,.5);
+
+}
+
+
+
+.button:hover{
+
+    background:#dc2626;
+
+    color:white;
+
+    transform:
+
+    scale(1.1);
+
+    box-shadow:
+
+    0 0 30px red;
+
+}
+
+
+
+/* CONTAINER */
+
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding-bottom:60px;
+
+}
+
+
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+}
+/* GLASSMORPHISM CARDS */
+
+
+.card{
+
+    background:
+
+    rgba(255,255,255,.10);
+
+
+    border:
+
+    1px solid rgba(255,150,150,.25);
+
+
+    border-radius:25px;
+
+
+    padding:35px;
+
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.45);
+
+
+
+    transition:.5s;
+
+
+    animation:float 5s ease-in-out infinite;
+
+
+    overflow:hidden;
+
+}
+
+
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    rgba(255,255,255,.15),
+
+    transparent
+
+    );
+
+
+    pointer-events:none;
+
+}
+
+
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+
+
+/* HOVER EFFECT */
+
+
+.card:hover{
+
+
+    transform:
+
+    translateY(-15px)
+
+    scale(1.05);
+
+
+
+    box-shadow:
+
+    0 0 30px red,
+
+    0 0 60px rgba(255,0,0,.5);
+
+
+
+    border-color:#ff6666;
+
+}
+
+
+
+
+.card h2{
+
+    color:#fecaca;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+
+
+.card p,
+
+.card li{
+
+    line-height:1.8;
+
+    color:white;
+
+    font-size:17px;
+
+}
+
+
+
+ul{
+
+    padding-left:25px;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer{
+
+
+    text-align:center;
+
+    padding:35px;
+
+    color:#fecaca;
+
+    font-size:18px;
+
+
+}
+
+
+
+/* RESPONSIVE DESIGN */
+
+
+@media(max-width:768px){
+
+
+    h1{
+
+        font-size:38px;
+
+    }
+
+
+
+    .subtitle{
+
+        font-size:18px;
+
+    }
+
+
+
+    .logo{
+
+        font-size:70px;
+
+    }
+
+
+
+    .card{
+
+        padding:25px;
+
+    }
+
+
+
+}
+
+
+
+
+@media(max-width:480px){
+
+
+    h1{
+
+        font-size:30px;
+
+    }
+
+
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .button{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<section class="hero">
+
+
+<div class="logo">
+
+🗄️
+
+</div>
+
+
+
+<h1>
+
+1.0.1 INTRODUCTION<br>
+
+ORACLE DATABASE PROGRAMMING
+
+</h1>
+
+
+
+<p class="subtitle">
+
+Learn SQL. Master PL/SQL. Build Powerful Database Applications.
+
+</p>
+
+
+
+<a href="#course" class="button">
+
+Explore Course
+
+</a>
+
+
+</section>
+
+
+
+
+
+<div class="container" id="course">
+
+
+<div class="cards">
+
+
+
+<div class="card">
+
+
+<h2>
+
+👋 Welcome to the Course
+
+</h2>
+
+
+
+<p>
+
+Welcome to your learning journey in Oracle Database Programming
+using Oracle Database, SQL, and PL/SQL.
+
+Throughout this course, you will develop the knowledge and
+technical competencies needed to create, retrieve, organize,
+manipulate, and manage data using industry-standard database
+technologies.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+Learning activities include lectures, laboratory exercises,
+hands-on programming activities, and real-world database
+applications designed to strengthen your analytical thinking,
+problem-solving abilities, and technical skills.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+
+📘 Course Description
+
+</h2>
+
+
+
+<p>
+
+This course focuses on Structured Query Language (SQL) and
+Procedural Language/SQL (PL/SQL), equipping learners with
+the essential knowledge and practical skills required to build,
+implement, develop, test, and maintain database applications
+using Oracle technology.
+
+</p>
+
+
+
+<br>
+
+
+
+<p>
+
+Students will gain experience in designing databases,
+writing SQL queries, developing PL/SQL programs, and
+administering Oracle databases while applying
+industry-standard practices.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+
+🎯 Learning Goal
+
+</h2>
+
+
+
+<p>
+
+This course aims to develop competent learners capable of
+designing, building, managing, and integrating Oracle database
+systems using SQL and PL/SQL.
+
+</p>
+
+
+
+<br>
+
+
+
+<ul>
+
+<li>Design relational databases.</li>
+
+<li>Write SQL queries for data retrieval.</li>
+
+<li>Manipulate database records efficiently.</li>
+
+<li>Develop PL/SQL programs and procedures.</li>
+
+<li>Apply database design principles.</li>
+
+<li>Practice responsible database administration.</li>
+
+<li>Prepare for industry certification and IT careers.</li>
+
+</ul>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<footer>
+
+💾 Oracle Database Programming • SQL • PL/SQL • Database Design • Database Administration 💾
+
+</footer>
+
+
+
+</body>
+
+</html>
