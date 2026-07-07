@@ -4,177 +4,330 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Oracle Database Programming</title>
 
+
 <style>
 
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-    scroll-behavior:smooth;
+
+    font-family:'Segoe UI',Arial,sans-serif;
+
 }
+
 
 
 body{
 
+
     min-height:100vh;
+
     color:white;
+
     overflow-x:hidden;
 
+
     background:
+
+
     linear-gradient(
-        -45deg,
+
+        135deg,
+
+        #0f0f0f,
+
         #2b0000,
-        #5c0000,
+
         #8b0000,
-        #b91c1c,
+
         #dc2626,
-        #ef4444,
-        #991b1b,
-        #450a0a
+
+        #ffffff,
+
+        #111111
+
     );
+
 
     background-size:400% 400%;
 
-    animation:bgMove 15s ease infinite;
+
+    animation:
+
+    bgMove 18s ease infinite;
+
 
 }
+
 
 
 
 @keyframes bgMove{
 
+
     0%{
+
         background-position:0% 50%;
+
     }
+
 
     50%{
+
         background-position:100% 50%;
+
     }
 
+
     100%{
+
         background-position:0% 50%;
+
     }
 
 }
 
 
 
-/* HERO SECTION */
+
+/* HERO */
 
 
 .hero{
 
-    min-height:70vh;
+
+    min-height:80vh;
+
 
     display:flex;
 
+
     flex-direction:column;
+
 
     justify-content:center;
 
+
     align-items:center;
+
 
     text-align:center;
 
-    padding:40px 20px;
+
+    padding:50px 20px;
+
+
+
+    animation:
+
+    fadeIn 1.5s ease;
+
 
 }
 
+
+
+
+
+@keyframes fadeIn{
+
+
+from{
+
+    opacity:0;
+
+    transform:translateY(-60px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+/* ICON */
 
 
 .logo{
 
-    font-size:90px;
 
-    animation:spin 10s linear infinite;
+    font-size:100px;
 
-    filter:
-    drop-shadow(0 0 10px white)
-    drop-shadow(0 0 30px red);
+
+    animation:
+
+
+    rotate 12s linear infinite,
+
+    glow 2s infinite alternate;
+
+
 
 }
 
 
 
-@keyframes spin{
+@keyframes rotate{
 
-    from{
-        transform:rotate(0deg);
-    }
 
-    to{
-        transform:rotate(360deg);
-    }
+from{
+
+transform:rotateY(0deg);
 
 }
 
 
+to{
 
-
-h1{
-
-    font-size:55px;
-
-    letter-spacing:3px;
-
-    margin:25px 0;
-
-
-    text-shadow:
-
-    0 0 10px white,
-    0 0 25px #ff6666,
-    0 0 50px red,
-    0 0 90px darkred;
-
-
-    animation:glow 2s infinite alternate;
+transform:rotateY(360deg);
 
 }
+
+
+}
+
+
 
 
 
 @keyframes glow{
 
-    from{
 
-        text-shadow:
-
-        0 0 10px white,
-        0 0 20px red;
-
-    }
+from{
 
 
-    to{
+filter:
 
-        text-shadow:
+drop-shadow(0 0 10px white);
 
-        0 0 20px white,
-        0 0 50px red,
-        0 0 100px crimson;
-
-    }
 
 }
+
+
+to{
+
+
+filter:
+
+drop-shadow(0 0 40px #dc2626);
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* TITLE */
+
+
+h1{
+
+
+    margin:25px 0;
+
+
+    font-size:60px;
+
+
+    letter-spacing:5px;
+
+
+    font-weight:900;
+
+
+    text-transform:uppercase;
+
+
+    color:white;
+
+
+
+    animation:
+
+
+    titleMove 3s infinite alternate;
+
+
+
+    text-shadow:
+
+
+    0 0 10px white,
+
+    0 0 30px #dc2626,
+
+    0 0 70px #991b1b;
+
+
+}
+
+
+
+
+
+@keyframes titleMove{
+
+
+from{
+
+transform:translateY(0);
+
+}
+
+
+to{
+
+transform:translateY(-10px);
+
+}
+
+
+}
+
 
 
 
 
 .subtitle{
 
-    font-size:22px;
 
-    color:#fee2e2;
+    font-size:24px;
 
-    margin-bottom:20px;
+
+    color:#ffe4e6;
+
+
+    letter-spacing:1px;
+
 
 }
+
+
 
 
 
@@ -183,170 +336,325 @@ h1{
 
 .button{
 
-    display:inline-block;
 
-    margin-top:25px;
-
-    padding:15px 40px;
-
-    background:white;
-
-    color:#991b1b;
-
-    border-radius:40px;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    transition:.4s;
-
-    box-shadow:
-
-    0 0 20px rgba(255,255,255,.5);
-
-}
+    margin-top:35px;
 
 
+    padding:16px 45px;
 
-.button:hover{
+
 
     background:#dc2626;
 
+
     color:white;
 
-    transform:
-
-    scale(1.1);
-
-    box-shadow:
-
-    0 0 30px red;
-
-}
 
 
-
-/* CONTAINER */
-
-
-.container{
-
-    width:90%;
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding-bottom:60px;
-
-}
+    border-radius:50px;
 
 
-
-.cards{
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(auto-fit,minmax(320px,1fr));
-
-    gap:30px;
-
-}
-/* GLASSMORPHISM CARDS */
+    text-decoration:none;
 
 
-.card{
-
-    background:
-
-    rgba(255,255,255,.10);
+    font-size:18px;
 
 
-    border:
-
-    1px solid rgba(255,150,150,.25);
-
-
-    border-radius:25px;
-
-
-    padding:35px;
-
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-
-
-    box-shadow:
-
-    0 15px 40px rgba(0,0,0,.45);
+    font-weight:bold;
 
 
 
     transition:.5s;
 
 
-    animation:float 5s ease-in-out infinite;
+
+    box-shadow:
+
+
+    0 0 20px rgba(220,38,38,.5);
+
+
+
+    animation:
+
+
+    buttonPulse 2s infinite;
+
+
+
+}
+
+
+
+
+
+@keyframes buttonPulse{
+
+
+50%{
+
+
+box-shadow:
+
+
+0 0 45px #dc2626;
+
+
+}
+
+
+}
+
+
+
+
+
+.button:hover{
+
+
+    background:white;
+
+
+    color:#991b1b;
+
+
+
+    transform:
+
+
+    scale(1.12);
+
+
+}
+
+
+
+
+
+
+/* CONTENT */
+
+
+.container{
+
+
+    width:90%;
+
+
+    max-width:1200px;
+
+
+    margin:auto;
+
+
+    padding-bottom:80px;
+
+
+}
+
+
+
+
+
+.cards{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+
+    repeat(auto-fit,minmax(330px,1fr));
+
+
+    gap:35px;
+
+
+}
+
+
+
+
+/* GLASS CARDS */
+
+
+.card{
+
+
+    position:relative;
+
+
+    background:
+
+
+    rgba(255,255,255,.85);
+
+
+
+    border:
+
+
+    1px solid rgba(220,38,38,.35);
+
+
+
+    border-radius:30px;
+
+
+
+    padding:35px;
+
+
+
+    color:#111;
+
+
+
+    backdrop-filter:
+
+
+    blur(20px);
+
+
+
+    -webkit-backdrop-filter:
+
+
+    blur(20px);
+
+
+
+
+    box-shadow:
+
+
+    0 25px 50px rgba(0,0,0,.35);
+
 
 
     overflow:hidden;
 
+
+
+    transition:.6s;
+
+
+
+    animation:
+
+
+    cardEnter 1s ease;
+
+
 }
 
+
+
+
+@keyframes cardEnter{
+
+
+from{
+
+
+opacity:0;
+
+
+transform:
+
+
+translateY(80px);
+
+
+}
+
+
+to{
+
+
+opacity:1;
+
+
+transform:
+
+
+translateY(0);
+
+
+}
+
+
+}
+
+
+
+
+/* SHINE EFFECT */
 
 
 .card::before{
 
-    content:"";
 
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    linear-gradient(
-
-    135deg,
-
-    rgba(255,255,255,.15),
-
-    transparent
-
-    );
+content:"";
 
 
-    pointer-events:none;
+position:absolute;
+
+
+top:-100%;
+
+
+left:-100%;
+
+
+width:200%;
+
+
+height:200%;
+
+
+
+background:
+
+
+linear-gradient(
+
+120deg,
+
+transparent,
+
+rgba(255,255,255,.8),
+
+transparent
+
+);
+
+
+
+transform:rotate(30deg);
+
+
+
+transition:1s;
+
 
 }
 
 
 
-@keyframes float{
 
-    0%,100%{
-
-        transform:translateY(0);
-
-    }
+.card:hover::before{
 
 
-    50%{
+top:100%;
 
-        transform:translateY(-12px);
 
-    }
+left:100%;
+
 
 }
-
-
-
-/* HOVER EFFECT */
+/* CARD HOVER */
 
 
 .card:hover{
@@ -354,36 +662,48 @@ h1{
 
     transform:
 
-    translateY(-15px)
 
-    scale(1.05);
+    translateY(-18px)
+
+    scale(1.04)
+
+    rotateX(4deg);
 
 
 
     box-shadow:
 
-    0 0 30px red,
 
-    0 0 60px rgba(255,0,0,.5);
+    0 0 35px rgba(220,38,38,.7),
+
+    0 0 70px rgba(255,255,255,.4);
 
 
 
-    border-color:#ff6666;
+    border-color:#dc2626;
+
 
 }
+
 
 
 
 
 .card h2{
 
-    color:#fecaca;
+
+    color:#991b1b;
+
+
+    font-size:30px;
+
 
     margin-bottom:20px;
 
-    font-size:28px;
+
 
 }
+
 
 
 
@@ -391,11 +711,15 @@ h1{
 
 .card li{
 
-    line-height:1.8;
 
-    color:white;
+    color:#333;
+
 
     font-size:17px;
+
+
+    line-height:1.9;
+
 
 }
 
@@ -403,9 +727,13 @@ h1{
 
 ul{
 
+
     padding-left:25px;
 
+
 }
+
+
 
 
 
@@ -417,9 +745,52 @@ footer{
 
     text-align:center;
 
-    padding:35px;
+
+    padding:40px;
+
+
+    background:
+
+
+    rgba(0,0,0,.55);
+
+
 
     color:#fecaca;
+
+
+    font-size:18px;
+
+
+    letter-spacing:2px;
+
+
+}
+
+
+
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:768px){
+
+
+
+h1{
+
+
+    font-size:38px;
+
+
+}
+
+
+
+.subtitle{
+
 
     font-size:18px;
 
@@ -428,45 +799,29 @@ footer{
 
 
 
-/* RESPONSIVE DESIGN */
+.logo{
 
 
-@media(max-width:768px){
+    font-size:70px;
 
 
-    h1{
-
-        font-size:38px;
-
-    }
+}
 
 
 
-    .subtitle{
-
-        font-size:18px;
-
-    }
+.card{
 
 
-
-    .logo{
-
-        font-size:70px;
-
-    }
+    padding:25px;
 
 
-
-    .card{
-
-        padding:25px;
-
-    }
+}
 
 
 
 }
+
+
 
 
 
@@ -474,32 +829,32 @@ footer{
 @media(max-width:480px){
 
 
-    h1{
 
-        font-size:30px;
-
-    }
+h1{
 
 
-
-    .cards{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-
-    .button{
-
-        width:100%;
-
-        text-align:center;
-
-    }
+    font-size:30px;
 
 
 }
+
+
+
+.button{
+
+
+    width:90%;
+
+
+    text-align:center;
+
+
+}
+
+
+
+}
+
 
 
 </style>
@@ -508,7 +863,9 @@ footer{
 
 
 
+
 <body>
+
 
 
 <section class="hero">
@@ -522,13 +879,14 @@ footer{
 
 
 
-<h1>
 
-1.0.1 INTRODUCTION<br>
+<h1>
+INTRODUCTION<br>
 
 ORACLE DATABASE PROGRAMMING
 
 </h1>
+
 
 
 
@@ -540,6 +898,7 @@ Learn SQL. Master PL/SQL. Build Powerful Database Applications.
 
 
 
+
 <a href="#course" class="button">
 
 Explore Course
@@ -547,7 +906,9 @@ Explore Course
 </a>
 
 
+
 </section>
+
 
 
 
@@ -560,12 +921,14 @@ Explore Course
 
 
 
+
+
 <div class="card">
 
 
 <h2>
 
-👋 Welcome to the Course
+Welcome to the Course
 
 </h2>
 
@@ -573,8 +936,8 @@ Explore Course
 
 <p>
 
-Welcome to your learning journey in Oracle Database Programming
-using Oracle Database, SQL, and PL/SQL.
+Welcome to your learning journey in database programming using
+Oracle Database, SQL, and PL/SQL.
 
 Throughout this course, you will develop the knowledge and
 technical competencies needed to create, retrieve, organize,
@@ -585,21 +948,26 @@ technologies.
 
 
 
+
 <br>
+
 
 
 
 <p>
 
-Learning activities include lectures, laboratory exercises,
-hands-on programming activities, and real-world database
-applications designed to strengthen your analytical thinking,
-problem-solving abilities, and technical skills.
+Learning activities are designed to strengthen your analytical
+thinking, problem-solving abilities, and technical skills through
+lectures, laboratory exercises, hands-on programming activities,
+and real-world database applications.
 
 </p>
 
 
+
 </div>
+
+
 
 
 
@@ -611,17 +979,18 @@ problem-solving abilities, and technical skills.
 
 <h2>
 
-📘 Course Description
+Course Description
 
 </h2>
+
 
 
 
 <p>
 
 This course focuses on Structured Query Language (SQL) and
-Procedural Language/SQL (PL/SQL), equipping learners with
-the essential knowledge and practical skills required to build,
+Procedural Language/SQL (PL/SQL), equipping learners with the
+essential knowledge and practical skills required to build,
 implement, develop, test, and maintain database applications
 using Oracle technology.
 
@@ -629,21 +998,26 @@ using Oracle technology.
 
 
 
+
 <br>
+
 
 
 
 <p>
 
-Students will gain experience in designing databases,
-writing SQL queries, developing PL/SQL programs, and
-administering Oracle databases while applying
-industry-standard practices.
+Students will gain experience in designing databases, writing
+SQL queries, developing PL/SQL programs, and administering
+Oracle databases while applying industry-standard practices.
 
 </p>
 
 
+
 </div>
+
+
+
 
 
 
@@ -655,9 +1029,10 @@ industry-standard practices.
 
 <h2>
 
-🎯 Learning Goal
+Learning Goal
 
 </h2>
+
 
 
 
@@ -671,37 +1046,64 @@ systems using SQL and PL/SQL.
 
 
 
+
 <br>
+
 
 
 
 <ul>
 
-<li>Design relational databases.</li>
+<li>
+Design relational databases.
+</li>
 
-<li>Write SQL queries for data retrieval.</li>
 
-<li>Manipulate database records efficiently.</li>
+<li>
+Write SQL queries for data retrieval.
+</li>
 
-<li>Develop PL/SQL programs and procedures.</li>
 
-<li>Apply database design principles.</li>
+<li>
+Manipulate database records efficiently.
+</li>
 
-<li>Practice responsible database administration.</li>
 
-<li>Prepare for industry certification and IT careers.</li>
+<li>
+Develop PL/SQL programs and procedures.
+</li>
+
+
+<li>
+Apply database design principles.
+</li>
+
+
+<li>
+Practice responsible database administration.
+</li>
+
+
+<li>
+Prepare for industry certification and IT careers.
+</li>
+
 
 </ul>
 
 
-</div>
-
-
 
 </div>
 
 
+
+
 </div>
+
+
+</div>
+
+
 
 
 
@@ -709,9 +1111,13 @@ systems using SQL and PL/SQL.
 
 <footer>
 
-💾 Oracle Database Programming • SQL • PL/SQL • Database Design • Database Administration 💾
+
+ Oracle Database Programming • SQL • PL/SQL • Database Design • Database Administration 
+
 
 </footer>
+
+
 
 
 
